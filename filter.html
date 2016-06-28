@@ -17,18 +17,43 @@
 		mod.controller("filter",function($scope){
 			$scope.name="my name is preeti";
 			$scope.number=4.557693;
-			$scope.strings=["array","yes","preeti", "ok","name" , "is" ,"no"] ;
+			$scope.fooditems=[{ item: "Pizza" },
+    { item: "Burger"},
+    { item: "Noodles"},
+    { item: "Dosa"},
+    { item: "Momos"},
+    { item: "Ice-cream"}] ;
 		});
 	</script>
 </head>
 <body ng-app="MyApp" ng-controller="filter" class="container">
-	<div class="container table-responsive table-striped table-bordered">
+	
 		<h1>{{name | uppercase}}</h1>
 		<h1>{{number|number:2}}</h1>
 		
-		<ul ng-repeat="item in strings| orderBy">
-			<li> {{item}}</li>
-		</ol>
+		
+		<table border="1" , width="20%" class="table">
+		<thead>
+		<tr >
+		<th >UNSORETED LIST OF FOODITEMS:</th>
+		<th >SORETED LIST OF FOODITEMS:</th>
+			</tr>
+			</thead>
+			<tbody>
+		<tr>
+	   <td > 
+	   <ul ng-repeat="items in fooditems">
+       <li >{{items.item}}</li>
+      </ul>
+       </td>
+		<td>
+		<ul ng-repeat="items in fooditems| orderBy: 'item' ">
+			<li>{{items.item}}</li>
+		</ul>
+		</td>
+		</tr>
+		</tbody>
+		</table>
 	</div>
 </body>
 </html>
