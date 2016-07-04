@@ -19,16 +19,16 @@
         function($routeProvider) {
             $routeProvider.
                     when('/route1/:param', { //Route 1
-                        templateUrl: 'templates/first.html',
+                        templateUrl: 'temp/first.html',
                         controller: 'RouteController'
                     }).
                     when('/route2/:param', { //Route 2
-                        templateUrl: 'templates/second.html',
+                        templateUrl: 'temp/second.html',
                         controller: 'RouteController'
                     }).
                     otherwise({ //Default Route
                         redirectTo: '/',
-                        templateUrl:'templates/index.html',
+                        templateUrl:'temp/index.html',
                         controller:'IndexController'
                     });
         }]);
